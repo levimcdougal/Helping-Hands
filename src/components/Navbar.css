@@ -112,4 +112,8 @@
   .navbar__links { display: none; }
   .navbar__burger { display: flex; }
   .navbar__mobile-menu { display: flex; }
+  .navbar__logo-img {
+    height: 52px;
+    transform: none;
+  }
 }

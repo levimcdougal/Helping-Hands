@@ -159,8 +159,17 @@
   .story-visual { max-width: 380px; margin: 0 auto; }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-hero__inner { flex-direction: column; }
+  .about-hero__inner > div { margin-left: 0; }
+  .about-hero__logo {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    margin-right: 0;
+  }
 }
 @media (max-width: 640px) {
   .values-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr 1fr; }
+  .about-hero__logo { max-width: 280px; }
 }
