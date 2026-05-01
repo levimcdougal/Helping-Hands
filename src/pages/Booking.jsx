@@ -66,7 +66,7 @@ export default function Booking() {
             <div className="contact-card__action">Tap to call</div>
           </a>
 
-          <a href="mailto:hello@helpinghands.com" className="contact-card card">
+          <a href="mailto:helpinghandssolutionsllc14@gmail.com" className="contact-card card">
             <div className="contact-card__icon">
               <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -74,7 +74,7 @@ export default function Booking() {
               </svg>
             </div>
             <div className="contact-card__label">Email Us</div>
-            <div className="contact-card__value">hello@helpinghands.com</div>
+            <div className="contact-card__value">helpinghandssolutionsllc14@gmail.com</div>
             <div className="contact-card__action">Tap to email</div>
           </a>
 
