@@ -110,4 +110,5 @@
 
 @media (max-width: 768px) {
   .contact-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto 48px; }
+  .contact-card__value { font-size: 16px; word-break: break-all; }
 }
