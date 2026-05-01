@@ -171,5 +171,7 @@
 @media (max-width: 640px) {
   .values-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .about-hero__logo { max-width: 280px; }
+  .about-hero__logo { display: none; }
+  .about-hero__inner { text-align: center; }
+  .about-hero__inner .btn-primary { margin-left: auto; margin-right: auto; }
 }
