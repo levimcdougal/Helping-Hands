@@ -319,4 +319,5 @@
   .services-grid { grid-template-columns: 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .cta-banner__inner { flex-direction: column; text-align: center; }
+  .how-step__num { color: rgba(232,52,138,0.45); }
 }

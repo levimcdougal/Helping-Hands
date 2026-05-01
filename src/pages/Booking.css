@@ -76,6 +76,10 @@
   padding: 18px 24px;
   font-size: 15px;
   font-weight: 500;
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .hours-banner { font-size: 12px; gap: 6px; padding: 14px 12px; }
 }
 .hours-banner strong { font-weight: 700; }
 

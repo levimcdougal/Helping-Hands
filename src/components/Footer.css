@@ -118,4 +118,8 @@
 @media (max-width: 600px) {
   .footer__inner { grid-template-columns: 1fr; gap: 32px; }
   .footer__bottom .container { flex-direction: column; gap: 6px; text-align: center; }
+  .footer__inner .footer__brand { justify-self: center; text-align: center; }
+  .footer__tagline { max-width: 100%; }
+  .footer__inner .footer__col { justify-self: center !important; text-align: center !important; }
+  .footer__contact li { justify-content: center; }
 }
