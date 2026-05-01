@@ -1,0 +1,166 @@
+/* CTA centered */
+.cta-banner__inner--center {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.about-page .cta-banner {
+  padding: 48px 0;
+}
+
+/* About hero layout */
+.about-hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-hero__inner > div {
+  margin-left: 60px;
+}
+
+.about-hero__logo {
+  width: 680px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-right: -80px;
+}
+
+/* Override page hero background for About page */
+.about-page .page-hero { background: var(--white); }
+
+/* Story ─────────────────────────────────────────── */
+.story-section { background: #EEF5FF; }
+.story-container {
+  max-width: 720px;
+}
+
+.story-visual__inner {
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: 48px 36px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.story-visual__inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(232,52,138,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.story-stat { margin-bottom: 40px; position: relative; }
+.story-stat__num {
+  display: block;
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--blue);
+  letter-spacing: -3px;
+  line-height: 1;
+}
+.story-stat__label {
+  display: block;
+  color: rgba(255,255,255,0.55);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.story-icon-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  position: relative;
+}
+.story-icon-grid > svg {
+  background: rgba(232,52,138,0.14);
+  border-radius: 12px;
+  padding: 12px;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+}
+
+.story-body { color: var(--text-muted); font-size: 15px; line-height: 1.8; margin-top: 16px; }
+
+/* Values ────────────────────────────────────────── */
+.values-section { background: var(--white); }
+.values-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.values-grid .value-card {
+  width: 300px;
+  flex-shrink: 0;
+}
+.value-card {
+  padding: 32px 24px;
+  background: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blue-mid); }
+.value-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.value-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.value-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+
+/* Team ──────────────────────────────────────────── */
+.team-section { background: #EEF5FF; }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.team-card {
+  padding: 36px 24px;
+  text-align: center;
+  background: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blue-mid); }
+.team-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  border: 3px solid var(--blue-mid);
+  color: var(--blue-dark);
+  font-size: 28px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+.team-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.team-role { font-size: 13px; color: var(--text-faint); line-height: 1.5; }
+
+@media (max-width: 1024px) {
+  .story-container { grid-template-columns: 1fr; }
+  .story-visual { max-width: 380px; margin: 0 auto; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}

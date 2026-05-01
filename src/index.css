@@ -1,0 +1,213 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Base */
+  --navy:        #111111;
+  --navy-mid:    #1E1E1E;
+  --navy-light:  #2E2E2E;
+  --white:       #FFFFFF;
+  --off-white:   #FFF5F9;
+
+  /* Pink — primary accent */
+  --blue:        #E8348A;
+  --blue-dark:   #C41E6E;
+  --blue-light:  #FCE4F2;
+  --blue-mid:    #F5A8D0;
+
+  /* Green — secondary accent */
+  --green:       #90D248;
+  --green-dark:  #76B535;
+  --green-light: #F2FAEB;
+  --green-mid:   #D6EFAB;
+
+  /* Text */
+  --text:        #0A1628;
+  --text-muted:  #5A6A80;
+  --text-faint:  #8B97AB;
+
+  /* Utility */
+  --border:      #DDE5F0;
+  --shadow-sm:   0 2px 8px rgba(10,22,40,0.07);
+  --shadow:      0 8px 32px rgba(10,22,40,0.12);
+  --shadow-lg:   0 20px 60px rgba(10,22,40,0.16);
+  --radius:      16px;
+  --radius-sm:   10px;
+  --transition:  0.2s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; border: none; outline: none; }
+ul { list-style: none; }
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Buttons ─────────────────────────────────── */
+
+/* Primary = light blue */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+.btn-primary:hover {
+  background: var(--blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,52,138,0.38);
+}
+
+/* Navy filled */
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+.btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); }
+
+/* Outline */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 30px;
+  border-radius: 50px;
+  border: 2px solid var(--border);
+  transition: border-color var(--transition), color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+.btn-outline:hover {
+  border-color: var(--blue);
+  color: var(--blue-dark);
+  background: var(--blue-light);
+}
+
+/* Outline on dark backgrounds */
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 13px 30px;
+  border-radius: 50px;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: border-color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+.btn-outline-white:hover {
+  border-color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+/* Green accent button (used sparingly) */
+.btn-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+.btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
+
+/* ── Section helpers ─────────────────────────── */
+
+/* Blue label (default) */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+/* Label on dark navy backgrounds */
+.section-label--dark {
+  background: rgba(232,52,138,0.18);
+  color: var(--blue);
+}
+
+/* Green label variant */
+.section-label--green {
+  background: var(--green-light);
+  color: var(--green-dark);
+}
+
+.section-title {
+  font-size: clamp(26px, 4vw, 44px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--navy);
+}
+.section-title span { color: var(--blue); }
+.section-title--white { color: var(--white); }
+.section-title--white span { color: var(--blue); }
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 16px;
+  max-width: 500px;
+  margin-top: 14px;
+  line-height: 1.7;
+}
+.section-sub--white { color: rgba(255,255,255,0.7); }
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}

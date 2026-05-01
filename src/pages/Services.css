@@ -1,0 +1,230 @@
+/* Page Hero ─────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  padding: 160px 0 88px;
+  background: var(--off-white);
+  overflow: hidden;
+}
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% -10%, rgba(232,52,138,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+.page-hero__content { text-align: center; }
+.page-hero__title {
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: var(--navy);
+}
+.page-hero__title span { color: var(--blue); }
+.page-hero__sub {
+  color: var(--text-muted);
+  font-size: 17px;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Packages ──────────────────────────────────────── */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Center orphaned cards on last row */
+.packages-grid > :last-child:nth-child(3n - 2) {
+  grid-column: 1 / 2;
+}
+.packages-grid > :last-child:nth-child(3n - 1) {
+  grid-column: 2 / 3;
+}
+
+.pkg-card {
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  background: var(--white);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.pkg-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.pkg-card--popular {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px var(--blue), var(--shadow);
+}
+
+.pkg-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.pkg-header { display: flex; align-items: flex-start; gap: 14px; }
+.pkg-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 12px;
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pkg-icon img {
+  filter: sepia(1) saturate(4) hue-rotate(285deg) brightness(0.85);
+}
+.pkg-name { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.pkg-tagline { font-size: 13px; color: var(--text-faint); }
+
+.pkg-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.pkg-price__amount { font-size: 40px; font-weight: 900; color: var(--navy); letter-spacing: -2px; }
+.pkg-price__note { font-size: 13px; color: var(--text-faint); }
+
+/* Frequency pills (office building card) */
+.pkg-frequencies {
+  display: flex;
+  gap: 8px;
+}
+.pkg-freq {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  background: var(--blue-light);
+  border: 1.5px solid var(--blue-mid);
+  border-radius: var(--radius-sm);
+  padding: 10px 6px;
+}
+.pkg-freq__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+.pkg-freq__note {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-weight: 500;
+}
+
+.pkg-meta { display: flex; gap: 16px; }
+.pkg-meta__item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.pkg-features { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.pkg-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.pkg-features li svg { flex-shrink: 0; }
+
+/* Add-ons ────────────────────────────────────────── */
+.addons-section { background: var(--off-white); }
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.addon-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--white);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.addon-card:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.addon-name { flex: 1; font-size: 15px; font-weight: 500; color: var(--navy); }
+.addon-price { font-size: 15px; font-weight: 700; color: var(--blue); }
+
+/* FAQ ────────────────────────────────────────────── */
+.faq-section { background: var(--white); }
+.faq-container {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 64px;
+  align-items: start;
+}
+.faq-list { display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent;
+  color: var(--navy);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  padding: 20px 0;
+  transition: color var(--transition);
+}
+.faq-q:hover { color: var(--blue-dark); }
+.faq-icon { flex-shrink: 0; transition: transform 0.2s ease; }
+.faq-item--open .faq-icon { transform: rotate(180deg); }
+.faq-a { color: var(--text-muted); font-size: 15px; line-height: 1.75; padding-bottom: 20px; }
+
+/* CTA Banner ─────────────────────────────────────── */
+.cta-banner { background: var(--navy); padding: 80px 0; }
+.cta-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cta-banner__inner--center {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cta-banner__inner h2 { font-size: 34px; font-weight: 800; margin-bottom: 8px; color: var(--white); }
+.cta-banner__inner p { color: rgba(255,255,255,0.6); font-size: 16px; }
+.cta-banner__btn { padding: 16px 36px; font-size: 16px; }
+
+@media (max-width: 1024px) {
+  .packages-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+  .addons-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-container { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 640px) {
+  .addons-grid { grid-template-columns: 1fr; }
+  .cta-banner__inner { flex-direction: column; text-align: center; }
+}
